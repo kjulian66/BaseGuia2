@@ -1,0 +1,60 @@
+body{
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.admin ul{ 
+    text-align: center;
+    border-collapse: collapse;
+    margin: auto;
+    align-items: center;
+    
+}
+
+.admin li{
+    display: inline-block;
+    border:1px solid black;
+    padding:15px;
+    background-color: rgb(123, 181, 181);
+}
+h1{
+    text-align: center;
+}
+
+#altas form, input{
+    text-align: center;
+    padding:10px;
+    margin:3px;
+    
+
+}
+#altas{
+    margin: auto;
+    
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 70px;
+    display: flex;
+}
+
+#tablaListar tr:not(:has(th)):hover {
+    background-color: brown;
+    transition: 0.7s;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    margin: 30px;
+    border-radius: 7px;
+}
+
+a:hover {
+    color: brown;
+    transition: 0.3s;
+}
