@@ -1,5 +1,5 @@
-create database Guia2;
-use Guia2;
+create database julianbianchiguia2;
+use julianbianchiguia2;
 
 create table productos (
 idProducto int (5) auto_increment,
@@ -15,4 +15,36 @@ select * from productos;
 
 drop table productos;
 
-drop database Guia2;
+create table roles (
+rol tinyint,
+descripcion varchar(20),
+primary key(rol)
+);
+
+insert into roles values(1, "Administrador"), (2, "Empleado");
+
+select * from roles;
+
+drop table roles;
+
+create table usuarios (
+idUsuario int (5) auto_increment,
+nombre varchar (20),
+usuario varchar (20),
+contrasenia varchar (20),
+rol tinyint,
+foreign key(rol) references roles(rol),
+primary key(idUsuario)
+);
+
+insert into usuarios (nombre, usuario, contrasenia, rol) values
+("Julian", "Administrador", "administrador123", 1);
+
+insert into usuarios (nombre, usuario, contrasenia, rol) values
+("Julian", "empleado", "empleado123", 2);
+
+select * from usuarios inner join roles;
+
+drop table usuarios;
+
+drop database julianbianchiguia2;
