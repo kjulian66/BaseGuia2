@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 1){
+    
+} else {
+    echo "ACCESO DENEGADO!!!";
+    echo "<br> <a href='index.php'><button>VOLVER</button></a>";
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +23,10 @@
 </head>
 
 <body>
+  <div id="cierreSesion">
+    <?php echo "Usuario: " .$_SESSION["nombre"]?>
+    <a href="loggout.php"><button>CERRAR SESION</button></a>
+  </div>
   <h1>Eliminar producto</h1>
   <?php
 

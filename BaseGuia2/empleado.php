@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 1){
+if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 2){
     
 } else {
     echo "ACCESO DENEGADO!!!";
@@ -31,10 +31,7 @@ if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 1){
     <div class="admin">
         <ul>
             <li>
-                <a href="altas.php"><button>Ingresar Productos</button></a>
-            </li>
-            <li>
-                <form method="POST" action="buscar.php">
+                <form method="POST" action="empleadoBuscar.php">
                     <!-- generar la busqueda dependiendo de la opcion ingresada
             por el usuario, puede ser en la misma pag o en otra-->
                     <input type="text" placeholder="Buscar" name="buscar" maxlength="10" required>
@@ -47,7 +44,7 @@ if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 1){
                 </form>
             </li>
             <li>
-                <a href="mostrar.php"><button>Mostrar Productos</button></a>
+                <a href="empleadoMostrar.php"><button>Mostrar Productos</button></a>
             </li>
         </ul>
     </div>

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 1){
+if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 2){
     
 } else {
     echo "ACCESO DENEGADO!!!";
@@ -52,14 +52,12 @@ if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 1){
             <td><?php echo $registro["idProducto"] ?></td>
             <td><?php echo $registro["descripcion"] ?></td>
             <td><?php echo $registro["precio"] ?></td>
-            <td><input type="radio" name="idProducto" required value="<?php echo $registro["idProducto"] ?>"></td>
           </tr>
         <?php
         }
         ?>
       </table>
-      <button id="botonEnviar" type="submit" value="modificar" formaction="modificar.php">MODIFICAR</button>
-      <button id="botonEnviar" type="submit" value="eliminar" formaction="eliminar.php">ELIMINAR</button>
+
     </form>
   <?php
   } else {
@@ -71,8 +69,7 @@ if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 1){
 
   <br><br><br>
 
-  <a href="admin.php">VOLVER</a>
-  <a href="altas.php">ALTAS</a>
+  <a href="empleado.php">VOLVER</a>
 </body>
 
 

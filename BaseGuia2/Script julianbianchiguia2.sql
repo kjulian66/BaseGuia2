@@ -38,12 +38,12 @@ primary key(idUsuario)
 );
 
 insert into usuarios (nombre, usuario, contrasenia, rol) values
-("Julian", "Administrador", "administrador123", 1);
+("Julian", "Administrador", "admin123", 1);
 
 insert into usuarios (nombre, usuario, contrasenia, rol) values
-("Julian", "empleado", "empleado123", 2);
+("Julian", "empleado", "empl123", 2);
 
-select * from usuarios inner join roles;
+select * from usuarios;
 
 drop table usuarios;
 
