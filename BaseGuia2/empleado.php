@@ -1,8 +1,7 @@
 <?php
 
 session_start();
-if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 2){
-    
+if (isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 2) {
 } else {
     echo "ACCESO DENEGADO!!!";
     echo "<br> <a href='index.php'><button>VOLVER</button></a>";
@@ -24,12 +23,15 @@ if(isset($_SESSION["idUsuario"]) && $_SESSION["rol"] == 2){
 
 <body onload="<?php echo isset($_SESSION["usuario"]) ? 'alert(\'¡Bienvenido, ' . $_SESSION["nombre"] . '!\');' : '' ?>">
     <div id="cierreSesion">
-        <?php echo "Usuario: " .$_SESSION["nombre"]?>
+        <?php echo "Usuario: " . $_SESSION["nombre"] ?>
         <a href="loggout.php"><button>CERRAR SESION</button></a>
     </div>
-    <h1>Pagina de Administrador</h1>    
+    <h1>Pagina de Administrador</h1>
     <div class="admin">
         <ul>
+            <li>
+                <a href="formularioEmpleado.php"><button>Enviar Mensaje a Administrador</button></a>
+            </li>
             <li>
                 <form method="POST" action="empleadoBuscar.php">
                     <!-- generar la busqueda dependiendo de la opcion ingresada

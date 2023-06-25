@@ -6,22 +6,46 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
-<?php
+    <?php
 
-echo "Hasta pronto " . $_SESSION["nombre"];
+    echo "Hasta pronto " . $_SESSION["nombre"];
 
-session_destroy();
+    $usuario = $_SESSION["usuario"];
+    $nombre = $_SESSION["nombre"];
+    $idUsuario = $_SESSION["idUsuario"];
+    $fecha = date("d-m-Y");
+    $hora = date("H:i:s");
+    $horaInicio = time();
 
-echo "<br><br>";
-echo "Sesion cerrada correctamente";
+    session_destroy();
 
-?>
+    $horaFinal = time();
+    $tiempo = $horaFinal - $horaInicio;
+    $texto = "
+
+    Usuario: $usuario ID: $idUsuario
+    Dia conexion $fecha a las $hora
+    Tiempo: $tiempo
+    
+    ";
+
+    $archivo = fopen("accesos.txt", "a+");
+    fwrite($archivo, $texto);
+    fclose($archivo);
+
+    echo "<br><br>";
+    echo "Sesion cerrada correctamente";
+
+    ?>
 </body>
+
 </html>

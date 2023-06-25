@@ -8,12 +8,9 @@ precio float (5),
 primary key (idProducto)
 );
 
-
 alter table productos auto_increment = 1000;
 
 select * from productos;
-
-drop table productos;
 
 create table roles (
 rol tinyint,
@@ -21,11 +18,9 @@ descripcion varchar(20),
 primary key(rol)
 );
 
-insert into roles values(1, "Administrador"), (2, "Empleado");
+insert into roles values(1, "Administrador"), (2, "Empleado"), (3, "Profesor");
 
 select * from roles;
-
-drop table roles;
 
 create table usuarios (
 idUsuario int (5) auto_increment,
@@ -43,8 +38,15 @@ insert into usuarios (nombre, usuario, contrasenia, rol) values
 insert into usuarios (nombre, usuario, contrasenia, rol) values
 ("Julian", "empleado", "empl123", 2);
 
+insert into usuarios (nombre, usuario, contrasenia, rol) values
+("Paula", "Profesor", "profe123", 3);
+
 select * from usuarios;
 
+drop table productos;
+
 drop table usuarios;
+
+drop table roles;
 
 drop database julianbianchiguia2;

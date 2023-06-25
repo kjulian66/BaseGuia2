@@ -26,6 +26,9 @@ if (mysqli_affected_rows($conexion) > 0) {
       case 2:
         header("location:empleado.php");
         break;
+      case 3:
+        header("location:profesor.php");
+        break;
       default:
         echo "Se ha producido un error";
     }
